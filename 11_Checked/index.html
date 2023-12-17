@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; width: 250px;">
+        <div style="display: flex; align-items: center;">
+            <label for="subscribeBtn">subscribe</label>
+            <input type="checkbox" id="subscribeBtn">
+        </div>
+        <div style="margin-top: 10px;">
+            Donate
+            <div>
+                <input type="radio" name="paying" id="visaBtn">
+                <label for="visaBtn">visa</label>
+            </div>
+            <div>
+                <input type="radio" name="paying" id="masterCardBtn">
+                <label for="masterCardBtn">masterCard</label>
+            </div>
+            <div>
+                <input type="radio" name="paying" id="payPalBtn">
+                <label for="payPalBtn">payPal</label>
+            </div>
+        </div>
+        
+        <button style="width: 100px; margin-top: 20px;" id="buttonBtn">Submit</button>
+
+        <p id="resultSub"></p>
+        <p id="result"></p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

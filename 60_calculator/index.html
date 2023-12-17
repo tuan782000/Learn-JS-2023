@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                /* cho rest các margin về 0 */
+                margin: 0;
+                /* Đưa tất cả các flex items nằm trên 1 hàng */
+                display: flex;
+                /* cho chiều cao mà nội dung chiếm full màn hình */
+                height: 100vh;
+                /* Canh giữa 2 bên phần nội dung */
+                justify-content: center;
+                /* Giới hạn lại flex-items không ăn theo chiều cao của height mà canh giữa phần trên dưới của height */
+                align-items: center;
+                /* Cho nó màu nền màu trắng nhạt */
+                background-color: hsl(0, 0%, 95%);
+            }
+            #calculator {
+                /* set phông chữa */
+                font-family: Arial, sans-serif;
+                /* cho màu nền */
+                background-color: hsl(0, 0%, 15%);
+                /* tạo viền cong */
+                border-radius: 15px;
+                /* Giới hạn chiều cao cho items này là 500px hoặc nhỏ hơn */
+                max-width: 500px;
+                /* Nếu các phần vượt quá thì ẩn đi */
+                overflow: hidden;
+            }
+            #display {
+                /* cho width ngang 100 % so với cha, cha rộng bao nhiêu con rộng bất nhiêu, đồng thời đẩy các thằng khác xuống */
+                width: 100%;
+                /* Cách trên dưới trái phải 20px */
+                padding: 20px;
+                /* kích thước chữ 16x5 = 80px */
+                font-size: 5rem;
+                /* chữ canh trái */
+                text-align: left;
+                /* không có viền */
+                border: none;
+                /* màu nền là đen */
+                background-color: hsl(0, 0%, 20%);
+                /* màu chữ là trắng */
+                color: white;
+            }
+            ::placeholder {
+                color: white;
+            }
+            #keys {
+                /* cho nó hiển thị theo dạng lưới */
+                display: grid;
+                /* sắp xếp sao đó 4 khối 1 hàng */
+                grid-template-columns: repeat(4, 1fr);
+                /* khoảng cách giữa các khối 10px */
+                gap: 10px;
+                /* khoảng cách từ chữ đến border 25px */
+                padding: 25px;
+            }
+            button {
+                /* set cho chiều rộng chiều cao nút 100px thành hình vuông */
+                width: 100px;
+                height: 100px;
+                /* sau đó bóp cong hình vuông thành hình tròn */
+                border-radius: 50px;
+                /* không có viền */
+                border: none;
+                /* màu nền xám */
+                background-color: hsl(0, 0%, 30%);
+                /* màu chữ trắng */
+                color: white;
+                /* kích thước chữ */
+                font-size: 3rem;
+                /* viết đậm */
+                font-weight: bold;
+                /* rê chuột vào đổi trỏ chuột thành bàn tay */
+                cursor: pointer;
+            }
+            /* khi đưa tay vào nút đổi màu nền nút nhẹ */
+            button:hover {
+                background-color: hsl(0, 0%, 40%);
+            }
+            /* khi nút được kích hoạt có mày nền là màu này */
+            button:active {
+                background-color: hsl(0, 0%, 50%);
+            }
+            /* màu nền cho nút toán tử */
+            .operator-btn {
+                background-color: hsl(35, 100%, 55%);
+            }
+            /* màu nền cho nút toán tử khi được rê vào */
+            .operator-btn:hover {
+                background-color: hsl(35, 100%, 65%);
+            }
+            /* màu nền nút toán tử được kích hoạt */
+            .operator-btn:active {
+                background-color: hsl(35, 100%, 75%);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="calculator">
+            <input type="text" placeholder="0" id="display" readonly />
+            <div id="keys">
+                <button onclick="appendToDisplay('+')" class="operator-btn">
+                    +
+                </button>
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+
+                <button onclick="appendToDisplay('-')" class="operator-btn">
+                    -
+                </button>
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+
+                <button onclick="appendToDisplay('*')" class="operator-btn">
+                    *
+                </button>
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+
+                <button onclick="appendToDisplay('/')" class="operator-btn">
+                    /
+                </button>
+                <button onclick="appendToDisplay('0')">0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="clearDisplay()" class="operator-btn">C</button>
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>

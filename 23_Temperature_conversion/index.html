@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Space Mono"
+            rel="stylesheet"
+        />
+
+        <title>TEMPERATURE CONVERSION PROGRAM 🌡️</title>
+        <style>
+            body {
+                background: ghostwhite;
+                font-family: "Space Mono";
+                font-size: 22px;
+            }
+            .container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #fff;
+                padding: 20px;
+                border-radius: 10px;
+
+                box-shadow: 3px 3px 18px 0px #000000;
+                -webkit-box-shadow: 3px 3px 18px 0px #000000;
+                -moz-box-shadow: 3px 3px 18px 0px #000000;
+            }
+            h1 {
+                color: rgb(0, 0, 255, 0.693);
+            }
+            form {
+                width: 600px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Temperature conversion:</h1>
+
+            <form action="" id="myForm">
+                <div style="display: flex; justify-content: center;">
+                    <input type="number" id="textBox" style="font-size:24px;"/>
+                </div>
+                <div style="display: flex; justify-content: center; margin-top: 5px; font-weight: bold;">
+                    <input type="radio" name="convert" id="toFahrenheit" />
+                    <label for="Fa">Celsius ➡ Fahrenheit</label>
+                </div>
+                <div style="display: flex; justify-content: center; margin-top: 5px; font-weight: bold;">
+                    <input type="radio" name="convert" id="toCelsius" />
+                    <label for="Ce">Fahrenheit ➡ Celsius</label>
+                </div>
+            </form>
+            <button 
+                style="display: block; margin: 0 auto; margin-top: 10px; background: rgba(255, 0, 0, 0.805); color: white; padding: 10px; border: none; border-radius: 8px; " 
+                onclick="convert()"
+            >
+                Submit
+            </button>
+
+            <p id="result"></p>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
