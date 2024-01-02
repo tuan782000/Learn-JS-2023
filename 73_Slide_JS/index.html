@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 500px;
+            display: none;
+        }
+
+        img.displaySlide {
+            display: block;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        /* .prev {
+            background-color: transparent;
+            color: white;
+            border: none;
+            position: absolute;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+        }
+
+        :hover.prev {
+            cursor: pointer;
+            color: gray;
+        }
+
+        .next {
+            background-color: transparent;
+            color: white;
+            border: none;
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+        }
+        
+        :hover.next {
+            cursor: pointer;
+            color: gray;
+        } */
+
+        .slider button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            background-color: hsla(0, 0%, 0%, .5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+        }
+        .prev {
+            left: 0;
+            margin-left: 10px;
+        }
+
+        .next {
+            right: 0;
+            margin-right: 10px;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .5;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slides">
+            <img class="slide" src="img/img1.jpg" alt="Image #1">
+            <img class="slide" src="img/img2.jpg" alt="Image #2">
+            <img class="slide" src="img/img3.jpg" alt="Image #3">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094</button>
+        <button class="next" onclick="nextSlide()">&#10095</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
